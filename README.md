@@ -15,7 +15,7 @@ pip install requirements.txt
 
 For using the optional 📧 email 🤖 bot, you may connect your own email through Gmail's Simple Mail Transfer Protocol (SMTP) server.
 
-It's hihgly recommend you use an alias email as you will have allow "Less secure Apps" within gmail. The email communication itself is secure as it used a modern crytopgraphic protocol called Transport Layer Security (TLS).
+It's highly recommend you use an alias email as you will have allow "Less secure Apps" within gmail. The email communication itself is secure as it used a modern crytopgraphic protocol called Transport Layer Security (TLS).
 
 To store email credentials, use a config.py or .env file.
 
