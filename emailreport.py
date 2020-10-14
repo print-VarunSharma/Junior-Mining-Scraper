@@ -11,8 +11,6 @@ def send_email(subject, content):
         server.ehlo()
         server.starttls()
         server.login(config.EMAIL_ADDRESS, config.PASSWORD)
-        # subject = input("Please enter the subject for the email: ")
-        # content = input("Please write the content for the email: ")
         message = 'subject: {}\n\n{}'.format(subject, content)
         server.sendmail(config.EMAIL_ADDRESS, recipients, message)
         server.quit()
@@ -52,7 +50,7 @@ def send_pymail(subject, content):
     smtp_server = "smtp.gmail.com"
     port = 587
     sender_email = "varunspybot@gmail.com"
-    password = input("Type password here: ")
+    password = PYBOT_PW
 
     # Create a secure SSL context
     context = ssl.create_default_context()
