@@ -1,15 +1,17 @@
 import smtplib
 import os
 import csv
-import ssl
 from config import PYBOT_EMAIL, PYBOT_PW
+
+# python dotenv alternative instead of a config.py file
+# pip install python-dotenv
 # from dotenv import load_dotenv  
 # load_dotenv() 
 
 # PYBOT_EMAIL = os.getenv("PYBOT_EMAIL_ADDRESS")
 # PYBOT_PW = os.getenv("PYBOT_EMAIL_PASSWORD")  
 
-def send_emailreport(subject, content):
+def send_email_report(subject, content):
     try:
         server = smtplib.SMTP('smtp.gmail.com:587')
         server.ehlo()
@@ -28,4 +30,4 @@ content = f'Hello,\
     This is a Discord Email Test'
 recipients = ['varundevasharma@gmail.com', 'varuns.pybot@gmail.com']
 
-send_emailreport(subject, content)
+send_email_report(subject, content)

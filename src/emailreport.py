@@ -4,12 +4,15 @@ import config
 import csv
 import ssl
 
-def send_emailreport(subject, content):
+# Testing Emai bot function
+def send_email(subject, content):
     try:
         server = smtplib.SMTP('smtp.gmail.com:587')
         server.ehlo()
         server.starttls()
         server.login(config.EMAIL_ADDRESS, config.PASSWORD)
+        # subject = input("Please enter the subject for the email: ")
+        # content = input("Please write the content for the email: ")
         message = 'subject: {}\n\n{}'.format(subject, content)
         server.sendmail(config.EMAIL_ADDRESS, recipients, message)
         server.quit()
@@ -18,12 +21,14 @@ def send_emailreport(subject, content):
         error = "Failed to connect to server. Email not sent."
         print(error)
 
+# sample test parameters for send_mail function
 subject = 'Test 3'
 content = f'Hello,\
     here are your 43-101 reports for the day!'
 recipients = ['varundevasharma@gmail.com', 'varuns.pybot@gmail.com']
 
-send_emailreport(subject, content)
+send_email(subject, content)
+
 
 # Option 1 Secure SSL
 import smtplib, ssl
